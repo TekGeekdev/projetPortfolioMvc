@@ -111,7 +111,7 @@ class ArticleController
                 print_r($selectArticle);
                 echo('</pre>');
                 $utilisateur = new Utilisateur;
-                $selectUser = $utilisateur->selectId($selectArticle['utilisateur_id']);
+                $selectUser  = $utilisateur->selectId($selectArticle['utilisateur_id']);
                 return View::render('article/edit', ['article' => $selectArticle, 'utilisateur' => $selectUser]);
             } else {
                 return View::render('error', ['msg' => 'L\'article n\'existe pas']);
@@ -122,10 +122,36 @@ class ArticleController
 
     }
 
-    public function update($data){
-        echo('<pre>');
-        print_r($data);
-        echo('</pre>');
+    public function update($data = [], $get = [])
+    {
+        $get = ! empty($get) ? $get : $_GET;
+
+        if (isset($get['id']) && $get['id'] != null) {
+            $validator = new Validator;
+            $validator->field('titre', $data['titre'])->required()->max(50);
+            $validator->field('contenu', $data['contenu'])->required();
+
+            $utilisateur = new Utilisateur;
+            $selectUser  = $utilisateur->selectId($data['utilisateur_id']);
+
+            if ($validator->isSuccess()) {
+
+                $article = new Article;
+                $update  = $article->update($data, $get['id']);
+                if ($update) {
+                    return view::redirect('utilisateur/show?id=' . $data['utilisateur_id']);
+                } else {
+                    return View::render('error', ['msg' => 'Impossible d\'appliquer les modifications']);
+                }
+            } else {
+                $errors = $validator->getErrors();
+                return View::render('article/create', ['errors' => $errors, 'article' => $data, 'utilisateur' => $selectUser]);
+            }
+        }
+    }
+
+    public function delete($data){
+        
     }
 
 }

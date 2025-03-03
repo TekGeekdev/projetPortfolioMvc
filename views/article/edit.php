@@ -17,6 +17,7 @@
                 <span class="span-erreur"> {{errors.contenu}}</span>
             {% endif %}
         <input type="submit" value="Envoyer" class="bouton">
+        <input type="hidden" name="utilisateur_id" value="{{article.utilisateur_id}}">
     </form>
 </section>
 </main>

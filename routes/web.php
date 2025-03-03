@@ -19,7 +19,7 @@ Route::post('/article/create', 'ArticleController@store');
 Route::get('/article/show', 'ArticleController@show');
 Route::get('/article/edit', 'ArticleController@edit');
 Route::post('/article/edit', 'ArticleController@update');
-Route::get('/article/delete', 'ArticleController@delete');
+Route::post('/article/delete', 'ArticleController@delete');
 
 
 Route::dispatch();
