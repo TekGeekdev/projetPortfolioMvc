@@ -1,4 +1,4 @@
-{{ include('layouts/header.php', {title:'Création article'})}}
+{{ include('layouts/header.php', {title:'Modifier article'})}}
 <main>
 <section class="form">
 <h2>Créer un article</h2>

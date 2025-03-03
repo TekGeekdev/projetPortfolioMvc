@@ -14,8 +14,8 @@
                     <article class="last-posts">
                         <h3>{{article.titre}}</h3>
                         <p>{{article.contenu}}</p>
-                        <p>{{article.datePublication}}</p>
-                        <p>{{article.authorName}}</p>
+                        <p>Date : {{article.datePublication}}</p>
+                        <p>Auteur : {{article.authorName}}</p>
                     </article>
                 {% endfor %}
             </section>

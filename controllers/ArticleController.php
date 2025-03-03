@@ -80,14 +80,51 @@ class ArticleController
 
     public function show()
     {
-        $article     = new Article;
-        $utilisateur = new Utilisateur;
-        $get         = ! empty($get) ? $get : $_GET;
 
-        $articles = $article->selectAllById($get['id'], 'utilisateur_id', 'datePublication', 'DESC');
+        $get = ! empty($get) ? $get : $_GET;
 
+        if (isset($get['id']) && $get['id'] != null) {
+            $article     = new Article;
+            $utilisateur = new Utilisateur;
+            if ($selectId = $utilisateur->selectId($get['id'])) {
+                $articles = $article->selectAllById($get['id'], 'utilisateur_id', 'id', 'DESC');
+                echo('<pre>');
+                print_r($articles);
+                echo('</pre>');
+                return View::render('article/show', ['utilisateur' => $selectId, 'articles' => $articles]);
+            } else {
+                return View::render('error', ['msg' => 'L\'utilisateur n\'existe pas']);
+            }
+
+        } else {
+            return View::render('error', ['msg' => 'Zone interdite, inscrivez-vous!']);
+        }
+
+    }
+
+    public function edit($data = [])
+    {
+        if (isset($data['id']) && $data['id'] != null) {
+            $article = new Article;
+            if ($selectArticle = $article->selectId($data['id'])) {
+                echo('<pre>');
+                print_r($selectArticle);
+                echo('</pre>');
+                $utilisateur = new Utilisateur;
+                $selectUser = $utilisateur->selectId($selectArticle['utilisateur_id']);
+                return View::render('article/edit', ['article' => $selectArticle, 'utilisateur' => $selectUser]);
+            } else {
+                return View::render('error', ['msg' => 'L\'article n\'existe pas']);
+            }
+
+        }
+        return View::render('error', ['msg' => 'Zone interdite, inscrivez-vous!']);
+
+    }
+
+    public function update($data){
         echo('<pre>');
-        print_r($articles);
+        print_r($data);
         echo('</pre>');
     }
 
