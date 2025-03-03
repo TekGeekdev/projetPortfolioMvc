@@ -16,11 +16,11 @@
         <nav id="nav-top" class="full-bleed">
             <h1>Portfolio</h1>
             <ul>
-                <li><a href="index.php">Acceuil</a></li>
-                <li><a href="">Á propos</a></li>
-                <li><a href="">Projets</a></li>
-                <li><a href="">Billet d'humeur</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="{{base}}/">Acceuil</a></li>
+                <li><a href="no-page">Á propos</a></li>
+                <li><a href="no-page">Projets</a></li>
+                <li><a href="no-page">Billet d'humeur</a></li>
+                <li><a href="no-page">Contact</a></li>
             </ul>
             <ul>
                 <li><a href="{{base}}/utilisateur/create">Création compte</a></li>

@@ -5,11 +5,11 @@
         <form method="post">
             <div>
                 <label for="email">Mail</label>
-                <input type="email" name="email" id="email" 
+                <input type="email" name="email" id="email"
                 placeholder="Entrez un email de type abc@gmail.com" value="{{utilisateur.email}}">
                 {% if errors.email is defined %}
                 <span class="span-erreur"> {{errors.email}}</span>
-            {% endif %}
+                {% endif %}
             </div>
             <div>
                 <label for="motDePasse">Mot de passe</label>

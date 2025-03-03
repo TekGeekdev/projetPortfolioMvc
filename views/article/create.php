@@ -5,14 +5,17 @@
     <form method="post">
         <div>
             <label for="titre">Entrez un titre</label>
-            <input type="text" name="titre" id="titre" placeholder="Saissisez un titre">
+            <input type="text" name="titre" id="titre" placeholder="Saissisez un titre" value="{{article.titre}}">
+            {% if errors.titre is defined %}
+                <span class="span-erreur"> {{errors.titre}}</span>
+            {% endif %}
         </div>
         <div>
             <label for="contenu">Saissisez le contenu de l'article</label>
-            <textarea name="contenu" id="contenu" rows="15"></textarea>
-        </div>
-            <input type="hidden" name="datePublication" id="datePublication" value="<?php echo $datePublication?>">
-        <input type="hidden" name="utilisateur_id" value="<?php echo $id?>">
+            <textarea name="contenu" id="contenu" rows="15" value="{{article.contenu}}"></textarea>
+            {% if errors.contenu is defined %}
+                <span class="span-erreur"> {{errors.contenu}}</span>
+            {% endif %}
         <input type="submit" value="Envoyer" class="bouton">
     </form>
 </section>

@@ -27,7 +27,6 @@ class UtilisateurController
             if ($insert) {
                 return view::redirect('utilisateur/show?id=' . $insert);
             } else {
-                echo('impossible de saisir l\'utilisateur');
                 return View::render('error', ['msg' => 'impossible de saisir l\'utilisateur']);
             }
         } else {
@@ -91,13 +90,14 @@ class UtilisateurController
         }
     }
 
-    public function delete($data=[]){
-        $id = $data['id'];
+    public function delete($data = [])
+    {
+        $id          = $data['id'];
         $utilisateur = new Utilisateur;
-        $delete = $utilisateur->delete($id);
-        if($delete){
+        $delete      = $utilisateur->delete($id);
+        if ($delete) {
             return view::redirect('utilisateur/create');
-        }else{
+        } else {
             return View::render('error', ['msg' => 'Impossible de supprimer le compte']);
         }
     }
