@@ -1,0 +1,14 @@
+.bouton{
+    padding: var(--rythme-mince);
+    color: var(--gris-50);
+    background-color: var(--couleur-secondaire);
+    border-radius: var(--bordure-faible);
+  }
+
+.bouton.block{
+  display: block;
+}
+
+.bouton.danger{
+  background-color: var(--couleur-annulation);
+}

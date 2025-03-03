@@ -1,0 +1,14 @@
+.profil section>div{
+    margin-inline: auto;
+    gap: var(--basique-gap);
+    max-width: 300px;
+}
+
+.profil section>div a{
+    text-align: center;
+    text-decoration: none;
+}
+
+.profil h2+div{
+    margin-top: var(--rythme-moyen);
+}

@@ -1,0 +1,29 @@
+[id="nav-top"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: var(--rythme-mince);
+    background-color: var(--couleurr-primaire);
+    color: var(--gris-50);
+}
+
+[id="nav-top"] a{
+    color: var(--gris-50);
+    display: inline-block;
+    text-decoration-color: transparent;
+    transition-property: text-decoration-color;
+	transition-duration: 500ms;
+}
+[id="nav-top"] a:hover{
+    text-decoration-color: var(--gris-50);
+    transition-duration: 500ms;
+}
+
+[id="nav-top"] ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: var(--basique-gap);
+}

@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    max-width: 100%;
+}
+
+p,a,label,span{
+    font-family: var(--police-p);
+    font-size: var(--p);
+}
+
+h1,h2,h3,h4,h5{
+    font-family: var(--police-titre);
+}
+
+main>header+section{
+    margin-top: var(--rythme-moyen);
+}
+h2+article{
+    margin-top: var(--rythme-regulier);
+}
+
+article+article {
+    margin-top: var(--rythme-petit);
+}
+h3+p{
+    margin-top: var(--rythme-mince);
+}
+p+p{
+    margin-top: var(--rythme-tres-mince);
+}
+
+/*  utilitaires */
+.flex{
+    display: flex;
+}
+.flex.f-col{
+    flex-direction: column;
+}

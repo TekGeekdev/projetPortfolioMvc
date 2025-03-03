@@ -1,0 +1,32 @@
+[id="nav-bottom"] a{
+    text-decoration-color: transparent;
+    transition-property: text-decoration-color;
+	transition-duration: 500ms;
+    font-size: var(--p-petit);
+}
+[id="nav-bottom"] a:hover{
+    text-decoration-color: var(--gris-50);
+    transition-duration: 500ms;
+}
+
+[id="nav-bottom"] :is(a,h2,span){
+    color: var(--gris-50);
+}
+
+[id="nav-bottom"]{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--rythme-moyen);
+    flex-wrap: wrap;
+
+    background-color: var(--couleurr-primaire);
+    padding: var(--rythme-regulier);
+}
+
+[id="nav-bottom"] .icones-boite{
+    display: flex;
+    gap: var(--basique-gap);
+    max-width: 30px;
+}

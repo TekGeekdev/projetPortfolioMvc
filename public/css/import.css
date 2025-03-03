@@ -1,0 +1,16 @@
+/* general */
+@import url("global.css");
+@import url("langue.css");
+
+/* layout */
+@import url("body.css");
+@import url("wrapper.css");
+
+/* composantes */
+@import url("nav-top.css");
+@import url("footer.css");
+@import url("main.css");
+@import url("form.css");
+@import url("bouton.css");
+@import url("error.css");
+@import url("profil.css");

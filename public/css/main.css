@@ -1,0 +1,19 @@
+header h2+h3{
+    margin-top: var(--rythme-regulier);
+}
+
+header h3+p{
+    margin-top: var(--rythme-mince);
+}
+
+header img{
+    border-radius: 50%;
+    max-width: 300px;
+}
+
+main>header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

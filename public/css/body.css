@@ -1,0 +1,10 @@
+body{
+    display: grid;
+    grid-template-columns: 1fr min(calc(100% - 40px), 1000px) 1fr;
+    gap: 20px;
+    background-color: var(--gris-300);
+}
+
+body>*{
+    grid-column: 1/-1;
+}
