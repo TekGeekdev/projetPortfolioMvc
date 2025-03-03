@@ -150,8 +150,18 @@ class ArticleController
         }
     }
 
-    public function delete($data){
-        
+    public function delete($data = [])
+    {
+        $article     = new Article;
+        $delete      = $article->delete($data['id']);
+        $utilisateur = new Utilisateur;
+        $selectUser  = $utilisateur->selectId($data['utilisateur_id']);
+        if ($delete) {
+            return view::redirect('article/show?id=' . $data['utilisateur_id'], ['utilisateur' => $selectUser]);
+        } else {
+            return View::render('error', ['msg' => 'Impossible de supprimer l\'article']);
+        }
+
     }
 
 }

@@ -20,9 +20,10 @@
             <td>{{article.datePublication}}</td>
             <td> <a href="{{base}}/article/edit?id={{article.id}}"" class="btn">Éditer</a></td>
             <td>
-            <form action="" method="post">
-                    <input type="hidden" name="id" value="">
-                    <input type="submit" class="btn red" value="delete">
+            <form action="{{base}}/article/delete" method="post">
+                    <input type="hidden" name="utilisateur_id" value="{{article.utilisateur_id}}">
+                    <input type="hidden" name="id" value="{{article.id}}">
+                    <input type="submit" class="bouton block danger" value="Supression de l'article">
                 </form>
             </td>
         </tr>
