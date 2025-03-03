@@ -8,15 +8,16 @@ use App\Providers\Validator;
 use App\Providers\View;
 
 class ArticleController
-{   
+{
 
-    public function index(){
-        $article = new Article;
+    public function index()
+    {
+        $article     = new Article;
         $utilisateur = new Utilisateur;
 
         $articles = $article->select('datePublication', 'DESC');
-        foreach($articles as $key => $oneArticle){
-            $authorName = $utilisateur->selectId($oneArticle['utilisateur_id']);
+        foreach ($articles as $key => $oneArticle) {
+            $authorName                   = $utilisateur->selectId($oneArticle['utilisateur_id']);
             $articles[$key]['authorName'] = $authorName['nomUtilisateur'];
         }
 
@@ -25,9 +26,7 @@ class ArticleController
         // echo('</pre>');
         return View::render('article/index', ['articles' => $articles]);
 
-
     }
-
 
     public function create()
     {
@@ -79,6 +78,17 @@ class ArticleController
         }
     }
 
+    public function show()
+    {
+        $article     = new Article;
+        $utilisateur = new Utilisateur;
+        $get         = ! empty($get) ? $get : $_GET;
 
+        $articles = $article->selectAllById($get['id'], 'utilisateur_id', 'datePublication', 'DESC');
+
+        echo('<pre>');
+        print_r($articles);
+        echo('</pre>');
+    }
 
 }

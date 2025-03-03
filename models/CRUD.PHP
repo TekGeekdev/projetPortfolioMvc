@@ -18,6 +18,18 @@ abstract class CRUD extends \PDO
         return $stmt->fetchAll();
     }
 
+    final public function selectAllById($value, $whereField, $field = null, $order = 'ASC')
+    {
+        if ($field === null) {
+            $field = $this->primaryKey;
+        }
+        $sql  = "SELECT * FROM $this->table WHERE $whereField = :value ORDER BY $field $order";
+        $stmt = $this->prepare($sql);
+        $stmt->bindValue(":value", $value);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     final public function selectId($value)
     {
         $sql  = "SELECT * FROM $this->table WHERE $this->primaryKey = :$this->primaryKey";
