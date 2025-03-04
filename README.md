@@ -1,5 +1,7 @@
 # 📌 Portfolio / Blog
 
+🔗 [Accéder au projet](https://e2495576.webdev.cmaisonneuve.qc.ca/projetBlogMvc/)
+
 Bienvenue sur mon projet **Portfolio / Blog** ! Ce projet m'a permis d'approfondir mes connaissances en développement web tout en mettant en avant mes compétences et mes réalisations.
 
 ---
