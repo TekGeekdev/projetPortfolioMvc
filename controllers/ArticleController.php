@@ -21,9 +21,6 @@ class ArticleController
             $articles[$key]['authorName'] = $authorName['nomUtilisateur'];
         }
 
-        // echo('<pre>');
-        // print_r($articles);
-        // echo('</pre>');
         return View::render('article/index', ['articles' => $articles]);
 
     }
@@ -88,9 +85,6 @@ class ArticleController
             $utilisateur = new Utilisateur;
             if ($selectId = $utilisateur->selectId($get['id'])) {
                 $articles = $article->selectAllById($get['id'], 'utilisateur_id', 'id', 'DESC');
-                echo('<pre>');
-                print_r($articles);
-                echo('</pre>');
                 return View::render('article/show', ['utilisateur' => $selectId, 'articles' => $articles]);
             } else {
                 return View::render('error', ['msg' => 'L\'utilisateur n\'existe pas']);
@@ -107,9 +101,6 @@ class ArticleController
         if (isset($data['id']) && $data['id'] != null) {
             $article = new Article;
             if ($selectArticle = $article->selectId($data['id'])) {
-                echo('<pre>');
-                print_r($selectArticle);
-                echo('</pre>');
                 $utilisateur = new Utilisateur;
                 $selectUser  = $utilisateur->selectId($selectArticle['utilisateur_id']);
                 return View::render('article/edit', ['article' => $selectArticle, 'utilisateur' => $selectUser]);

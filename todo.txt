@@ -1,8 +1,0 @@
-corriger création compte password pas validation
-detecter dans la suppresion du compte si il y a des aarticles
-if article ne supprime pas
-
-
-   echo('<pre>');
-    print_r($selectId);
-    echo('</pre>');

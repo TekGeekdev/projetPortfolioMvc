@@ -2,7 +2,7 @@
 <main>
     <section class="table">
         <h2>Mes articles</h2>
-        <table>
+        <table class="table">
     <thead>
         <tr>
             <th>Titre</th>
@@ -18,9 +18,9 @@
             <td>{{article.titre}}</td>
             <td>{{article.contenu}}</td>
             <td>{{article.datePublication}}</td>
-            <td> <a href="{{base}}/article/edit?id={{article.id}}"" class="btn">Éditer</a></td>
+            <td> <a href="{{base}}/article/edit?id={{article.id}}"" class="bouton block">Éditer</a></td>
             <td>
-            <form action="{{base}}/article/delete" method="post">
+            <form action="{{base}}/article/delete" method="post" class="form-delete">
                     <input type="hidden" name="utilisateur_id" value="{{article.utilisateur_id}}">
                     <input type="hidden" name="id" value="{{article.id}}">
                     <input type="submit" class="bouton block danger" value="Supression de l'article">

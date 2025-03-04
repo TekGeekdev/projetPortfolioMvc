@@ -12,3 +12,8 @@
 .profil h2+div{
     margin-top: var(--rythme-moyen);
 }
+
+
+.profil form input[type=submit]{
+    width: 100%;
+}

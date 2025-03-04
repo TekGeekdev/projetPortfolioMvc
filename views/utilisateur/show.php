@@ -6,7 +6,7 @@
             <a href="{{base}}/utilisateur/edit?id={{utilisateur.id}}" class="bouton block">Éditer profil</a>
             <a href="{{base}}/article/create?id={{utilisateur.id}}" class="bouton block">Créer un article</a>
             <a href="{{base}}/article/show?id={{utilisateur.id}}" class="bouton block">Mes articles</a>
-            <form action="{{base}}/utilisateur/delete" method="post">
+            <form action="{{base}}/utilisateur/delete" method="post" class="form-delete">
                 <input type="hidden" name="id" value="{{utilisateur.id}}">
                 <input type="submit" class="bouton block danger" value="Supression du compte">
             </form>
