@@ -1,4 +1,5 @@
 <?php
 
-define('BASE', '/projetBlogMvc');
-define('ASSET', '/projetBlogMvc/public/');
+define('BASE', '/projetBlogMvcFinalEtape');
+define('ASSET', '/projetBlogMvcFinalEtape/public/');
+define('TELECHARGEMENT', '/projetBlogMvcFinalEtape/public/telechargements/');
