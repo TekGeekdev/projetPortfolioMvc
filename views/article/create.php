@@ -2,7 +2,7 @@
 <main>
 <section class="form">
 <h2>Créer un article</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div>
             <label for="titre">Entrez un titre</label>
             <input type="text" name="titre" id="titre" placeholder="Saissisez un titre" value="{{article.titre}}">
@@ -16,6 +16,11 @@
             {% if errors.contenu is defined %}
                 <span class="span-erreur"> {{errors.contenu}}</span>
             {% endif %}
+        </div>
+        <div>
+            <label for="image">Choissisez une image</label>
+            <input type="file" name="image" id="image">
+        </div>
         <input type="submit" value="Envoyer" class="bouton">
     </form>
 </section>

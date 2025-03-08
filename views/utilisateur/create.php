@@ -27,6 +27,15 @@
                     <span class="span-erreur">{{errors.nomUtilisateur}}</span>
                 {% endif %}
             </div>
+            <div>
+                <label for="privileges">Choissisez votre privilege</label>
+                <select name="final_privilege_id" id="privilege">
+                    <option value="disabled">Choisir privilege</option>
+                    {% for privilege in privileges %}
+                        <option value="{{privilege.id}}">{{privilege.type}}</option>
+                    {% endfor %}
+                </select>
+            </div>
             <input type="submit" value="Créer le compte" class="bouton">
         </form>
     </section>

@@ -4,13 +4,16 @@ namespace App\Controllers;
 use App\Models\Utilisateur;
 use App\Providers\Validator;
 use App\Providers\View;
+use App\Models\Privilege;
 
 class UtilisateurController
 {
 
     public function create()
-    {
-        return View::render('utilisateur/create');
+    {   
+        $privilege = new Privilege;
+        $selectPrivilege = $privilege->select();
+        return View::render('utilisateur/create', ['privileges' => $selectPrivilege]);
     }
 
     public function store($data = [])
@@ -20,6 +23,7 @@ class UtilisateurController
         $validator->field('email', $data['email'])->required()->max(50)->email();
         $validator->field('motDePasse', $data['motDePasse'])->required()->min(5)->max(15);
         $validator->field('nomUtilisateur', $data['nomUtilisateur'])->required()->min(5)->max(15);
+        // TODO: faire la validation pour le champ privilege
 
         if ($validator->isSuccess()) {
             $utilisateur = new Utilisateur;
